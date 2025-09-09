@@ -1,0 +1,5 @@
+.env
+/venv
+/wandb
+players_dfs.pkl
+match_df.pkl

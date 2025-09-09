@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"); */
+/* 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+} */
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+} */
+
+:root {
+  --font-poppins: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-poppins);
+  /* background-color: #f1f1f1; */
+}
+.ant-slider-track {
+  background-color: red !important;
+  width: 5px;
+}
+.ant-slider-handle {
+  color: red !important;
+}
+.glassmorphism{
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white; 
+}
