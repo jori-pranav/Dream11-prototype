@@ -7,6 +7,7 @@ The Dream Team11 Prediction Platform is a web application that leverages AI to a
 This application has been developed to serve as a part of the **Inter IIT Mid Prep Problem Statement** by **Dream11**.
 
 ---
+## DUEL UI MOCKUPS - https://drive.google.com/file/d/16qnIXz-vshcDSU74Gx_Tza1Jq-DOlPoE/view?usp=sharing
 
 ## Features
 
