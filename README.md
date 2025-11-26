@@ -9,55 +9,182 @@ This application has been developed to serve as a part of the **Inter IIT Mid Pr
 ---
 ## DUEL UI MOCKUPS - https://drive.google.com/file/d/16qnIXz-vshcDSU74Gx_Tza1Jq-DOlPoE/view?usp=sharing
 
-## Features
+#  Dual-UI System for Dream11 Fantasy Analytics
 
-### 1. **Admin Page for CSV Upload**
-   - Admin users can upload a CSV file that contains match data, player details, and match specifics (such as date, format, and teams).
-   - The CSV format is the primary source of match and player information, which drives the display of teams and match details on the platform.
+This project delivers a **Dual-UI ecosystem** consisting of:
 
-### 2. **User Authentication**
-   - The platform uses **NextAuth.js** for user authentication, allowing users to sign up and log in to access personalized features.
-   - After successful authentication, users can navigate through the website and interact with the features.
+1. **Product UI** → Built for Dream11 fantasy users  
+2. **Model UI** → Built for Dream11’s internal Data Science team  
 
-### 3. **Home Page**
-   - Once logged in, users are redirected to the **home page**, where they can start interacting with the platform.
-   - The home page displays various matches and player details derived from the uploaded CSV.
+Both UIs are powered by a common ML backend with SHAP explainability, enabling transparent, trustworthy, and data-driven decision-making.
 
-### 4. **News Section**
-   - A dynamic **news section** pulls the latest cricket news and updates related to players and matches.
-   - This helps users stay updated and make informed decisions while selecting players for their Dream11 teams.
+---
 
-### 5. **Poll Section**
-   - Users can participate in polls related to upcoming matches or player performances, adding an interactive element to the platform.
+##  1. Product UI (User-Facing Fantasy Sports Assistant)
 
-### 6. **Match Notification Settings**
-   - Users can enable or disable match notifications through the **settings page**.
-   - By default, match notifications are enabled, ensuring users never miss a match.
+The Product UI helps fantasy players make smarter team-building decisions using ML-driven insights.
 
-### 7. **AI Chatbot ("Dream")**
-   - A built-in **AI chatbot** (named "Dream") assists users in navigating the website and provides recommendations for creating customized teams.
-   - The chatbot is always accessible at the bottom right corner of the website, ensuring users can get help whenever needed.
+### **Five Core Features**
 
-### 8. **Match Page and Player Lineup**
-   - Clicking on a match redirects users to the **teams page**:
-     - **Pitch Condition Analysis**: A modal shows a message from the website’s mascot, commenting on the pitch conditions and suggesting the ideal types of bowlers to pick for the match.
-     - **Team Lineups**: Users can see the lineup of players for both teams, with player names and images fetched from the uploaded CSV file.
+---
 
-### 9. **Team Building Paths**
-   - **Beginner Path**: This path is for new users who may not have extensive knowledge about cricket.
-     - **AI-Generated Team**: Users can opt for an AI-generated team based on the prediction model.
-     - **Predicted Winning Team**: Users can predict the winning team between two teams, and the system will automatically generate a team based on the majority players in the predicted Dream11.
-   
-   - **Advanced Path**: This is for experienced users who wish to customize their team.
-     - **Country-based Player Selection**: Users can specify the number of players from each country.
-     - **Role-based Player Restrictions**: Users can define the number of batsmen, bowlers, all-rounders, and wicketkeepers they want in their final lineup.
-     - **Lockin/Lockout Feature**: Users can lock in or lock out up to 3 players from the given list of 22 players.
-     - **Player Stats**: Clicking on a player will display their detailed stats, including graphical and statistical data, and performances in recent 10 matches.
+### **1️⃣ Player Score Prediction Cards**
+Each player card includes:
+- Predicted fantasy score (ML output)  
+- Confidence interval  
+- Player role (BAT/BWL/AR/WK)  
+- Risk indicator (Safe / Balanced / Risky)  
+- Top contributing factors (simplified SHAP)  
 
-### 10. **AI-Generated Team Selection**
-   - When users are ready, they can click on "Generate Team." The **ML model** running on the backend processes the input and generates the final 11 players.
-   - The prediction takes into account user preferences (such as player roles and country selections) along with AI-based suggestions.
-   - After a brief wait (2-3 seconds), the final team is displayed, along with an AI-generated explanation for why each player was selected.
+Helps users instantly evaluate each player’s potential.
+
+---
+
+### **2️⃣ Context-Aware Filters & Sorting**
+Filter players by:
+- Form  
+- Venue type  
+- Player role  
+- Opposition difficulty  
+- Credits  
+
+Sort options:
+- Predicted score  
+- Risk rating  
+- Credit efficiency  
+
+Enables personalized, strategy-driven team building.
+
+---
+
+### **3️⃣ Simplified Explainability (SHAP for Users)**
+Human-readable “Why this prediction?” panel showing:
+- Form impact  
+- Venue advantage  
+- Role influence  
+- Opponent difficulty  
+
+Each factor displayed as a +/– point contribution.  
+Boosts user trust via transparent AI.
+
+---
+
+### **4️⃣ Captain & Vice-Captain Recommendation Engine**
+Based on ML predictions + stability metrics:
+- Suggests high-value C/VC picks  
+- Shows confidence & risk  
+- Explains the reasoning  
+
+Improves the most critical decision in fantasy sports.
+
+---
+
+### **5️⃣ Interactive Team Builder Panel**
+Features:
+- Real-time player selection  
+- Predicted total team score  
+- Credit usage updates  
+- Role distribution validation  
+- Risk meter (based on variance)  
+
+Streamlines the entire team creation experience.
+
+---
+
+---
+
+##  2. Model UI (Internal ML Debugging & Model Comparison Tool)
+
+The Model UI is designed for Dream11’s internal DS team to analyze, compare, and debug ML models.
+
+### **Five Core Features**
+
+---
+
+### **1️⃣ Model Comparison Dashboard**
+Side-by-side comparison of 5+ ML models:
+- R²  
+- MAE / RMSE  
+- Training time  
+- Inference latency  
+- Stability score  
+- Feature count  
+
+Helps quickly identify the most reliable model.
+
+---
+
+### **2️⃣ Global & Local SHAP Explainability**
+Includes:
+- Global SHAP bar chart  
+- Player-level waterfall plots  
+- SHAP force plots  
+- Model-to-model SHAP comparison  
+
+Critical for understanding model behavior.
+
+---
+
+### **3️⃣ Error Analysis & Diagnostic Panel**
+Provides:
+- Under/over-prediction distribution  
+- Player-wise error heatmaps  
+- Match-level error trends  
+- Outlier detection  
+- Predicted vs Actual scatterplots  
+
+Identifies edge cases and model weaknesses.
+
+---
+
+### **4️⃣ Player-Level Insight Explorer**
+For any selected player:
+- Raw features  
+- Normalized values  
+- Predictions from multiple models  
+- SHAP contributions  
+- Error patterns  
+
+Supports granular debugging.
+
+---
+
+### **5️⃣ Hyperparameters & Training Configuration Viewer**
+Shows:
+- Max depth  
+- Learning rate  
+- Trees/estimators  
+- Loss function  
+- Regularization  
+- Training logs  
+
+Ensures reproducibility and quick re-training.
+
+---
+
+---
+
+##  Unified ML Backend
+
+Both UIs are powered by the same ML pipeline:
+
+- Data extraction  
+- Preprocessing  
+- EDA  
+- Feature engineering  
+- 5+ regression models  
+- Best model achieved **R² = 0.91**  
+- SHAP explainability (global + local)  
+
+---
+
+##  Outcome
+
+This dual-UI system provides:
+
+- A **transparent AI assistant** for Dream11 users  
+- A **technical, deep debugging interface** for Dream11’s ML team  
+- A cohesive **product + ML + explainability** ecosystem  
 
 ---
 
